@@ -7,7 +7,21 @@ let form = document.querySelector("form");
 let input = document.querySelector("#search-input");
 let colorClick = document.querySelector('.learn-more');
 let demoB = document.querySelector('.dialog');
+let closeUp = document.querySelector('.show-up');
+let btnChange = document.querySelector("#search-change").querySelectorAll("button");
+let wallChange = document.querySelector('.wall-change');
+let wallChangeBox = document.querySelector('.wall-change-box');
+let img = document.querySelector('.wall-change-box').querySelectorAll('img');
+let flag = 0;
+let wallFlag = 0;
 
+let change = [
+    "https://www.baidu.com/s?wd",
+    "https://cn.bing.com/search?q",
+    "http://www.google.com/search?source",
+];
+
+let names = ["wd", "q", "q"];
 for (let i = 0; i < btn.length; i++) //用var没办法保存
 {
 
@@ -16,7 +30,7 @@ for (let i = 0; i < btn.length; i++) //用var没办法保存
         demoB.style.backgroundColor = dates[i];
     });
 };
-let flag = 0;
+
 colorClick.addEventListener('click', function () {
 
     if (flag == 0) {
@@ -33,7 +47,7 @@ colorClick.addEventListener('click', function () {
         flag = 0;
     }
 });
-let closeUp = document.querySelector('.show-up');
+
 closeUp.addEventListener('click', function () {
     demoB.style.width = '0px';
     demoB.style.height = '0px';
@@ -52,9 +66,6 @@ closeUp.addEventListener('click', function () {
 searchInput.addEventListener('focus', function () {
     searchInput.style.width = '560px';
     searchChange.style.display = 'block';
-
-
-
 });
 searchInput.addEventListener('blur', fn);
 
@@ -68,13 +79,7 @@ function fn() {
     }
 }
 
-let change = [
-    "https://www.baidu.com/s?wd",
-    "https://cn.bing.com/search?q",
-    "http://www.google.com/search?source",
-];
-let btnChange = document.querySelector("#search-change").querySelectorAll("button");
-let names = ["wd", "q", "q"];
+
 
 for (let i = 0; i < btnChange.length; i++) {
     btnChange[i].addEventListener("click", function () {
@@ -113,9 +118,8 @@ function check(i) {
     i < 10 ? num = '0' + i : num = i;
     return num;
 };
-let wallChange = document.querySelector('.wall-change');
-let wallChangeBox = document.querySelector('.wall-change-box');
-let wallFlag = 0;
+
+
 wallChange.addEventListener('click', function () {
     if (wallFlag == 0) {
         wallChangeBox.style.right = '0px';
@@ -125,20 +129,16 @@ wallChange.addEventListener('click', function () {
         wallFlag = 0;
 
     }
-
-
-})
+});
 
 //自定义背景
-let img = document.querySelector('.wall-change-box').querySelectorAll('img');
-let bd = document.querySelector('body');
 for (let i = 0; i < img.length; i++) {
     img[i].addEventListener('click', function () {
         document.body.style.backgroundImage = "url(" + this.src + ")";
     })
 
-}
-//网上代码，原生js，我还不会
+};
+//本地图片上传，原生js，我还不会
 function shangc(e) {
 
     let files = document.getElementById("inputimgurl").files[0];

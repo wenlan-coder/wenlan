@@ -255,12 +255,13 @@ h3 {
 .wall-change-box li {
     list-style: none;
     float: left;
-    padding: 10px
+    padding: 10px;
 }
 
-.wall-change-box img {
+.wall-change-box  {
+    img{
     width: 80px;
-    height: 80px;
+    height: 80px;}
 }
 
 //时间显示
